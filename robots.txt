@@ -1,0 +1,21 @@
+# Robots.txt for Figueroa's Mobile Detail
+# https://figueroasmobiledetail.com
+
+User-agent: *
+Allow: /
+
+# Sitemaps
+Sitemap: https://figueroasmobiledetail.com/sitemap.xml
+
+# Disallow directories that shouldn't be indexed
+Disallow: /assets/video/
+Disallow: /*.js$
+Disallow: /*.css$
+
+# Allow all images for Google Image Search
+Allow: /assets/img/
+Allow: /assets/*.png
+Allow: /assets/*.jpg
+
+# Crawl-delay (optional, remove if causing issues)
+# Crawl-delay: 1
