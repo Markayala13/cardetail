@@ -368,7 +368,7 @@ img {
 
 .hero-title {
     font-family: var(--font-heading);
-    font-size: clamp(2.5rem, 7vw, 5rem);
+    font-size: clamp(3rem, 7.5vw, 5.5rem);
     font-weight: 700;
     line-height: 1.1;
     margin-top: 3rem;
@@ -383,7 +383,7 @@ img {
 }
 
 .hero-subtitle {
-    font-size: clamp(1rem, 2vw, 1.3rem);
+    font-size: clamp(1.1rem, 2.3vw, 1.4rem);
     margin-bottom: 2.5rem;
     color: var(--gray-light);
     font-weight: 300;
@@ -1131,7 +1131,7 @@ img {
     }
 
     .hero-title {
-        font-size: 2.7rem;
+        font-size: 3rem;
         margin-top: 2.5rem;
     }
 
@@ -1208,13 +1208,13 @@ img {
     }
 
     .hero-title {
-        font-size: 2.2rem;
+        font-size: 2.5rem;
         line-height: 1.2;
         margin-top: 2.5rem;
     }
 
     .hero-subtitle {
-        font-size: 1rem;
+        font-size: 1.1rem;
         padding: 0 1rem;
     }
 
@@ -1304,13 +1304,13 @@ img {
     }
 
     .hero-title {
-        font-size: 1.6rem;
+        font-size: 1.9rem;
         line-height: 1.2;
         margin-top: 2rem;
     }
 
     .hero-subtitle {
-        font-size: 0.9rem;
+        font-size: 1rem;
         padding: 0 0.5rem;
     }
 
