@@ -450,6 +450,70 @@ console.log(
 );
 
 // ===========================
+// Video Reels Carousel
+// ===========================
+
+const reelsTrack = document.getElementById('reelsTrack');
+const reelsPrev = document.getElementById('reelsPrev');
+const reelsNext = document.getElementById('reelsNext');
+
+if (reelsTrack && reelsPrev && reelsNext) {
+    let currentReelIndex = 0;
+    const reelItems = document.querySelectorAll('.reel-item');
+    let videosPerView = window.innerWidth <= 768 ? 1 : 3;
+
+    function updateVideosPerView() {
+        videosPerView = window.innerWidth <= 768 ? 1 : 3;
+        showReels(currentReelIndex);
+    }
+
+    function showReels(index) {
+        const maxIndex = Math.max(0, reelItems.length - videosPerView);
+        currentReelIndex = Math.max(0, Math.min(index, maxIndex));
+
+        // Ocultar todos los videos
+        reelItems.forEach(item => {
+            item.style.display = 'none';
+        });
+
+        // Mostrar solo los videos del índice actual
+        for (let i = 0; i < videosPerView; i++) {
+            const itemIndex = currentReelIndex + i;
+            if (itemIndex < reelItems.length) {
+                reelItems[itemIndex].style.display = 'block';
+            }
+        }
+
+        // Pausar todos los videos
+        document.querySelectorAll('.reel-item video').forEach(video => {
+            video.pause();
+        });
+
+        // Actualizar botones
+        reelsPrev.style.opacity = currentReelIndex === 0 ? '0.5' : '1';
+        reelsNext.style.opacity = currentReelIndex >= maxIndex ? '0.5' : '1';
+        reelsPrev.style.cursor = currentReelIndex === 0 ? 'not-allowed' : 'pointer';
+        reelsNext.style.cursor = currentReelIndex >= maxIndex ? 'not-allowed' : 'pointer';
+    }
+
+    reelsPrev.addEventListener('click', () => {
+        if (currentReelIndex > 0) {
+            showReels(currentReelIndex - videosPerView);
+        }
+    });
+
+    reelsNext.addEventListener('click', () => {
+        const maxIndex = Math.max(0, reelItems.length - videosPerView);
+        if (currentReelIndex < maxIndex) {
+            showReels(currentReelIndex + videosPerView);
+        }
+    });
+
+    window.addEventListener('resize', updateVideosPerView);
+    showReels(0);
+}
+
+// ===========================
 // Initialize Everything
 // ===========================
 

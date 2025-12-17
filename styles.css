@@ -828,6 +828,75 @@ img {
 }
 
 /* ===========================
+   Video Reels Section
+   =========================== */
+.reels {
+    padding: var(--spacing-xl) 0;
+    background: linear-gradient(135deg, #f8f9fa 0%, #e9ecef 100%);
+    overflow: hidden;
+}
+
+.reels-carousel-container {
+    position: relative;
+    max-width: 1200px;
+    margin: 3rem auto 0;
+    padding: 0 60px;
+}
+
+.reels-track {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 2rem;
+    transition: none;
+}
+
+.reel-item {
+    width: 100%;
+    aspect-ratio: 9/16;
+    border-radius: 20px;
+    overflow: hidden;
+    box-shadow: var(--shadow-lg);
+    background: #000;
+}
+
+.reel-item video {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
+}
+
+.reels-btn {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    background: var(--gradient-gold);
+    color: var(--white);
+    border: none;
+    cursor: pointer;
+    font-size: 1.2rem;
+    box-shadow: var(--shadow-md);
+    transition: all var(--transition-fast);
+    z-index: 10;
+}
+
+.reels-btn:hover {
+    transform: translateY(-50%) scale(1.1);
+    box-shadow: var(--shadow-lg);
+}
+
+.reels-prev {
+    left: 0;
+}
+
+.reels-next {
+    right: 0;
+}
+
+/* ===========================
    Contact Section
    =========================== */
 .contact {
@@ -1296,6 +1365,26 @@ img {
         width: 100%;
         max-width: 300px;
     }
+
+    .reels-carousel-container {
+        padding: 0 50px;
+    }
+
+    .reels-track {
+        grid-template-columns: 1fr;
+        gap: 1.5rem;
+    }
+
+    .reel-item {
+        max-width: 350px;
+        margin: 0 auto;
+    }
+
+    .reels-btn {
+        width: 45px;
+        height: 45px;
+        font-size: 1rem;
+    }
 }
 
 @media (max-width: 480px) {
@@ -1372,6 +1461,20 @@ img {
 
     .carousel-dot.active {
         width: 24px;
+    }
+
+    .reels-carousel-container {
+        padding: 0 45px;
+    }
+
+    .reel-item {
+        max-width: 280px;
+    }
+
+    .reels-btn {
+        width: 40px;
+        height: 40px;
+        font-size: 0.9rem;
     }
 
     .contact {
